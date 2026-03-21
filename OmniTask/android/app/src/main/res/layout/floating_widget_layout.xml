@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- OmniTask Floating Widget Layout -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/floating_widget_bg"
+    android:padding="14dp"
+    android:elevation="12dp">
+
+    <!-- Header - Draggable Area -->
+    <LinearLayout
+        android:id="@+id/widget_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="⚡ OmniTask"
+            android:textColor="#E8ECF4"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btn_open_app"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@android:drawable/ic_menu_more"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Open App"
+            android:layout_marginEnd="6dp" />
+
+        <ImageButton
+            android:id="@+id/btn_close_widget"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Close Widget" />
+
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2D3348" />
+
+    <!-- Task List Container -->
+    <LinearLayout
+        android:id="@+id/task_list_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:minHeight="60dp">
+
+        <!-- Placeholder: Tasks loaded dynamically -->
+        <TextView
+            android:id="@+id/empty_state_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No active tasks ✓"
+            android:textColor="#5A6478"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:padding="12dp" />
+
+    </LinearLayout>
+
+    <!-- Add Task Button -->
+    <Button
+        android:id="@+id/btn_add_quick_task"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="＋ Quick Add"
+        android:textColor="#0F1117"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:background="@drawable/neon_button_bg"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
