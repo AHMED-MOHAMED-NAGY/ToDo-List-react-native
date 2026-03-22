@@ -1,5 +1,6 @@
 package com.omnitask.speech
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognitionListener
@@ -43,7 +44,7 @@ class SpeechToTextModule(reactContext: ReactApplicationContext) :
         }
 
         try {
-            val activity = currentActivity
+            val activity: Activity? = getCurrentActivity()
             if (activity == null) {
                 promise.reject("NO_ACTIVITY", "No active activity")
                 return
@@ -83,7 +84,7 @@ class SpeechToTextModule(reactContext: ReactApplicationContext) :
     @ReactMethod
     fun stopListening(promise: Promise) {
         try {
-            val activity = currentActivity
+            val activity: Activity? = getCurrentActivity()
             activity?.runOnUiThread {
                 speechRecognizer?.stopListening()
                 isListening = false
@@ -100,7 +101,7 @@ class SpeechToTextModule(reactContext: ReactApplicationContext) :
     @ReactMethod
     fun cancel(promise: Promise) {
         try {
-            val activity = currentActivity
+            val activity: Activity? = getCurrentActivity()
             activity?.runOnUiThread {
                 speechRecognizer?.cancel()
                 speechRecognizer?.destroy()

@@ -155,7 +155,7 @@ export const getActiveTasks = async (limit = 10) => {
     `SELECT * FROM tasks
      WHERE status IN ('pending', 'in_progress')
      ORDER BY CASE priority WHEN 'high' THEN 0 WHEN 'medium' THEN 1 WHEN 'low' THEN 2 END,
-              due_date ASC NULLS LAST,
+              due_date IS NULL, due_date ASC,
               created_at DESC
      LIMIT ?`,
     [limit],

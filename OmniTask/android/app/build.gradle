@@ -117,3 +117,6 @@ dependencies {
         implementation jscFlavor
     }
 }
+
+// THIS IS THE MAGIC LINE TO FIX THE ICONS
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
