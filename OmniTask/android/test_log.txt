@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.RuntimeException: Could not create parent directory for lock file D:\Android studio data\.gradle \wrapper\dists\gradle-7.3.1-bin\b47edjwz5j48avzx8xp2zpcd3\gradle-7.3.1-bin.zip.lck
+	at org.gradle.wrapper.GradleWrapperMain.main(SourceFile:65)
